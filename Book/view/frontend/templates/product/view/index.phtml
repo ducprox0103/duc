@@ -1,0 +1,43 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var $block \Hancocks\Book\Block\Index*/
+$curentProduct = $block->getCurrentProduct();
+$curentProductSku = $curentProduct->getSku();
+?>
+
+<div id="modal-content">
+    <h2 class="modal-header">Make an enquiry</h2>
+    <form class="fieldset" action="<?= $block->getUrl('book/index/index'); ?>" method="post" data-mage-init='{"validation":{}}'>
+        <input type="hidden" name="sku" value="<?= $curentProductSku ?>">
+        <div class="field">
+            <label for="first_name" class="label">First Name:</label>
+            <input required="true" type="text" class="form-control" placeholder="First Name" name="first_name">
+        </div>
+        <div class="field">
+            <label for="surname" class="label">Surname:</label>
+            <input required="true" type="text" class="form-control" placeholder="Surname" name="surname">
+        </div>
+        <div class="field">
+            <label for="email" class="label">Email:</label>
+            <input required="true" type="email" class="form-control" id="email" placeholder="Email Address" name="email">
+        </div>
+        <div class="field">
+            <label for="telephone" class="label">Telephone:</label>
+            <input required="true" type="tel" class="form-control" placeholder="Telephone" name="telephone">
+        </div>
+        <div class="field">
+            <label for="message" class="label">Message:</label>
+            <textarea required="true" cols="40" rows="10" aria-invalid="false" placeholder="Message" name="message"
+                style="height: 51px;"></textarea>
+        </div>
+        <button type="submit" class="action primary enquiry">Send</button>
+    </form>
+</div>
+<button class="action primary" id="example-modal-button"
+    data-mage-init='{"example-modal": {"target": "#modal-content"}}'>
+    Make an enquiry
+</button>

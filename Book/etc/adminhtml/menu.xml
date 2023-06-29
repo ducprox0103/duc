@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Hancocks_Book::Books" title="Books" module="Hancocks_Book" sortOrder="51" action="hancocks_book/book/index" resource="Hancocks_Book::books"  />
+	</menu>
+</config>   
